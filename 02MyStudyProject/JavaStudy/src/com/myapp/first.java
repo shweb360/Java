@@ -17,7 +17,7 @@ public class first {
 		}
 		
 		StringBuffer ss=new StringBuffer();
-		ss.append("22");
+		ss.append("232");
 		ss.append("33");
 		System.out.println(ss);
 		scan.close();
