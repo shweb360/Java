@@ -1,7 +1,5 @@
 package com.myapp;
 
-import java.util.Scanner;
-
 public class character {
 
 	public static void main(String[] args) {
@@ -24,7 +22,6 @@ public class character {
 
 	public static void getws(int num) {
 
-		Scanner scan = new Scanner(System.in);
 		int count = 0;
 		System.out.println("next方式接受：");
 
