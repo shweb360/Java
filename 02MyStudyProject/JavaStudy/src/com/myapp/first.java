@@ -6,6 +6,8 @@ public class first {
 
 	public static void main(String[] args) {
 	
+		
+		AnimalDog.eat();
 		Scanner scan=new Scanner(System.in);
 		
 		System.out.println("next方式接受：");

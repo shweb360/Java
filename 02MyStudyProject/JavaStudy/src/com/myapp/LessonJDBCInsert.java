@@ -24,6 +24,11 @@ public class LessonJDBCInsert {
 	    sql.setInt(2, 2);
 	    i=sql.executeUpdate();
 	    System.out.println(i);
+	    
+	    sql=cc.prepareStatement("delete from pmw_admin where id=?");
+	    sql.setInt(1, 2);
+	    i=sql.executeUpdate();
+	    System.out.println(i);
 	}
 
 }
