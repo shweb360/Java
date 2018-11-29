@@ -1,6 +1,6 @@
 package com.myapp;
 
-import java.sql.*;;
+import java.sql.*;
 
 public class LessonJDBC {
 
