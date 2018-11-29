@@ -21,6 +21,8 @@ public class swing {
 		// 创建及设置窗口
 		JFrame frame=new JFrame();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		frame.setSize(500, 350);   
 		 // 添加 "Hello World" 标签
 		JLabel lable=new JLabel("Hello Swing");
 		
