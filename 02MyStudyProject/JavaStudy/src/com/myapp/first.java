@@ -6,6 +6,10 @@ public class first {
 
 	public static void main(String[] args) {
 	
+		
+		AnimalDog.eat();
+		AnimalDog dog=new AnimalDog();
+		System.out.println(dog);
 		Scanner scan=new Scanner(System.in);
 		
 		System.out.println("next方式接受：");

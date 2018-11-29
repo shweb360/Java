@@ -3,7 +3,6 @@ package com.myapp;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-
 public class Conn {
 	Connection con;
 	// JDBC 驱动名及数据库 URL
@@ -16,7 +15,7 @@ public class Conn {
 
 	public Connection getConnection() {
 		try {
-			 // 注册 JDBC 驱动
+			// 注册 JDBC 驱动
 			Class.forName(JDBC_DRIVER);
 		} catch (ClassNotFoundException e) {
 
@@ -27,11 +26,10 @@ public class Conn {
 			System.out.println("连接数据库...");
 			con = DriverManager.getConnection(DB_URL, USER, PASS);
 			System.out.println("数据库连接成功");
-			
 
 		} catch (Exception e) {
 			e.printStackTrace();
-			
+
 		}
 
 		return con;
