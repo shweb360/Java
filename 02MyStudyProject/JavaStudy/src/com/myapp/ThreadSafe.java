@@ -4,6 +4,7 @@ public class ThreadSafe implements Runnable {
 	int num = 10;
 	public void run() {
 		while (true) {
+			//Í¬²½
 		   synchronized ("") {		
 		
 			if (num > 0) {
