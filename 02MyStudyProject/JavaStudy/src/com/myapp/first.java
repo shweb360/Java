@@ -8,11 +8,10 @@ public class first {
 	
 		
 		AnimalDog.eat();
-<<<<<<< HEAD
+
 		AnimalDog dog=new AnimalDog();
 		System.out.println(dog);
-=======
->>>>>>> refs/remotes/origin/master
+
 		Scanner scan=new Scanner(System.in);
 		
 		System.out.println("next方式接受：");

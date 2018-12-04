@@ -1,6 +1,5 @@
 package com.myapp;
 
-import java.awt.GridLayout;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
