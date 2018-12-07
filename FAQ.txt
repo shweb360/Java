@@ -1,0 +1,29 @@
+【1、eclipse怎么没有server?】
+eclipse没有server:
+
+eclipse集成Tomcat：
+打开eclipse - 窗口 - 首选项 - 服务器 - 运行时环境 找到Tomcat然后添加。
+
+eclipse添加插件：
+
+开发WEB项目时要集成Tomcat可以并不是所有的eclipse都有服务器选项，如果不幸你的正好没有，不要怕。
+
+首先我们打开eclipse - help - install new software 然后在work with 中输入
+
+kepler - http://download.eclipse.org/releases/kepler找到Web,XML, Java EE and OSGi Enterprise Development选项打钩，然后一路next就ok了。
+
+【2、tomcat的下载和安装配置】
+
+注意：安装的前提是已经安装配置好了JDK，没安装的可以翻看我之前的一篇经验，这里就不多说了。
+任意打开一个浏览器，搜索tomcat。在结果列表中打开tomcat官网。
+参考：https://jingyan.baidu.com/article/2c8c281daa77aa0008252aff.html
+
+
+【3、如何将Tomcat与eclipse关联起来】
+eclipse与Tomcat关联，更好的开发程序
+参考：https://jingyan.baidu.com/article/154b46316a0dfb28ca8f41f0.html
+
+
+【4、环境搭建】
+http://www.runoob.com/jsp/eclipse-jsp.html
+
