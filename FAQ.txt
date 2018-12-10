@@ -27,3 +27,6 @@ eclipse与Tomcat关联，更好的开发程序
 【4、环境搭建】
 http://www.runoob.com/jsp/eclipse-jsp.html
 
+win10搭建JSP开发环境详细步骤【图文】
+https://blog.csdn.net/weixin_41895706/article/details/80617170
+
