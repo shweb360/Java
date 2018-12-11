@@ -7,8 +7,14 @@
 <title>My first jsp Page</title>
 </head>
 <body>
+
 <%
 out.println("Hello jsp ");
+out.println("Your IP address is "+request.getRemoteAddr());
 %>
+
+<jsp:scriptlet>
+out.println("hahah ");
+</jsp:scriptlet>
 </body>
 </html>
