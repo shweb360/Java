@@ -1,25 +1,26 @@
 package com.runoob;
 import java.io.*;
 import javax.servlet.*;
-import java.util.*;
+
 public class LogFilter implements Filter {
 
-	public void init(FilterConfig config) {
-		String testParam=config.getInitParameter("test-param");
-		System.out.println("Test param: "+testParam);
+	public void destroy() {
+		System.out.println("First Filter------Destory");
 	}
-	
-	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
-			throws IOException, ServletException {
-		String ipAddress=request.getRemoteAddr();
-		System.out.println("IP"+ipAddress+", Time "+new Date().toString());
+ 
+	public void doFilter(ServletRequest arg0, ServletResponse arg1,
+			FilterChain arg2) throws IOException, ServletException {
+		System.out.println("First Filter------doFilter start");
+ 
+		arg2.doFilter(arg0, arg1);
 		
-		chain.doFilter(request, response);
-		
+		System.out.println("First Filter------doFilter end");
 	}
-	public void destory()
-	{
-		
+ 
+	public void init(FilterConfig arg0) throws ServletException {
+		System.out.println("First Filter------Init");
 	}
+
+
 
 }

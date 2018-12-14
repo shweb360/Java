@@ -9,12 +9,12 @@
 <body>
 
 <%
-out.println("Hello jsp ");
+
 out.println("Your IP address is "+request.getRemoteAddr());
 %>
 
 <jsp:scriptlet>
-out.println("hahah ");
+out.println("hahah ww956");
 </jsp:scriptlet>
 </body>
 </html>
