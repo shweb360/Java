@@ -30,3 +30,85 @@ http://www.runoob.com/jsp/eclipse-jsp.html
 win10搭建JSP开发环境详细步骤【图文】
 https://blog.csdn.net/weixin_41895706/article/details/80617170
 
+【5、Javabean】
+javabean就是符合某一种特定的规范的Java类。
+1、好处：
+解决代码重复编写，
+减少代码冗余，
+功能区分，
+提高代码的维护性。
+
+2、Javabean 的设计原则：
+-公有类
+-无参的公有构造方法
+-属性私有
+-getter和setter方法
+
+【6、JSP中include指令和include动作区别】
+首先
+
+＜%@ include file=” ”%＞：为指令元素
+
+＜jsp:include page=” ” flush=”true”/＞：为 动作元素
+
+先说指令元素：
+
+include指令元素读入指定页面的内容。并把这些内容和原来的页面融合到一起。
+
+然后经过两个阶段:
+
+1.将jsp翻译成 servlet 
+
+2.servlet 翻译成 .class文件
+
+这样的话，在被引入文件中请不要加入 contentype 的属性 ，因为jsp页面中不能指定多个contentType
+
+ 
+
+动作元素：
+
+它并没有把所要添加的jsp的代码加入到被添加的jsp中
+
+只是在运行时引入了要添加的jsp页面执行后所产生的应答，这意味着我们可以指定任何能够产生应答的Web资源,(例如一个servlet或一个jsp页面),只要这些资源所产生的类型和jsp页面产生的编码类型相同（如果编码类型不同，则会出现乱码）.JSP容器将通过一个内部的函数调用来执行指定的资源，因此,这些被引入的资源可以帮 助处理原来的请求,所以这些资源可以访问请求作用域内的所有对象.以及所有原来的请求参数.
+
+如果修改了要添加的jsp页面，那么可以立刻使用该页面的最新版本，这是因为对待被引入的页面的方式与对待由浏览器直接调用的jsp页面的方式完全相同。即容器检测页面的变化，并自动进入翻译阶段,以得到页面的最新版本。
+
+以下是对include 两种用法的区别，主要有两个方面的不同：
+
+执行时间上：
+
+＜%@ include file=”   .jsp”%＞ 是在翻译阶段执行
+
+＜jsp:include page=”  .jsp” flush=”true” /＞ 在请求处理阶段执行.
+
+引入内容的不同：
+
+＜%@ include file=”  .jsp”%＞引入静态文本(html,jsp),在JSP页面被转化成servlet之前和它融和到一起.
+
+＜jsp:include page=”  .jsp” flush=”true” /＞引入执行页面或servlet所生成的应答文本.
+
+ 
+【7、eclipse中创建.tld文件的步骤】
+
+选中你在WEB-INF文件包下创建的tlds文件夹，点击右键，具体步骤如下：
+1、新建—其他
+2.输入xml ----> XML File ----> 将默认的NewFile.xml更改为   xxx.tld---->Next
+
+3.Create XML file from a DTD file ----> Next
+
+4.Select XML Catalog entry
+
+5. 选择-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN----->Next
+6. finish---->ok
+--------------------- 
+作者：takeCareOfYou 
+来源：CSDN 
+原文：https://blog.csdn.net/takecareofyou/article/details/70045169 
+版权声明：本文为博主原创文章，转载请附上博文链接！
+
+【8、如何建立一个简单的标记处理器?】
+需要做三件事：
+一、编写标签处理器（java文件）
+二、在标签库描述符文件中描述该标签 (TLD文件)
+三、在jsp文件中引用该标签
+
