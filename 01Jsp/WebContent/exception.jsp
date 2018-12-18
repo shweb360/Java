@@ -12,17 +12,11 @@
 <title>JSP 异常处理</title>
 </head>
 <body>
-<%
-   //获取客户端本地化信息
-   Locale locale = request.getLocale();
-   String language = locale.getLanguage();
-   String country = locale.getCountry();
 
-%>
 <%
 try{
 	
-	//out.println(10/0);
+	out.println(10/0);
 }
 catch(Exception ex){
 	out.print(ex.getMessage());

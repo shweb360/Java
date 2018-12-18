@@ -9,6 +9,5 @@
 </head>
 <body>
 	<ex:Hello/>
-
 </body>
 </html>
