@@ -1,1 +1,8 @@
-1
+【1、】git提交时报错
+出现这样的问题是由于:自己当前版本低于远程仓库版本
+
+https://www.jianshu.com/p/004f47f908c5
+
+1.使用强制push的方法：
+
+ git push -u origin master -f
