@@ -1,3 +1,11 @@
+
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+out.println("path: "+path+"<br>");
+out.println("getScheme: "+request.getScheme()+"<br>");
+out.println("basePath: "+basePath+"<br>");
+%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
