@@ -8,7 +8,6 @@ public class first {
 	
 		
 		AnimalDog.eat();
-
 		AnimalDog dog=new AnimalDog();
 		System.out.println(dog);
 
