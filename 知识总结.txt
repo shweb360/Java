@@ -1,4 +1,4 @@
-【1、】git提交时报错
+【1】git提交时报错
 出现这样的问题是由于:自己当前版本低于远程仓库版本
 
 https://www.jianshu.com/p/004f47f908c5
@@ -6,3 +6,27 @@ https://www.jianshu.com/p/004f47f908c5
 1.使用强制push的方法：
 
  git push -u origin master -f
+
+【2】关于web项目创建后WEB-INF下面没有出现web.xml的解决方法
+https://www.cnblogs.com/whgk/p/9081565.html
+提供两种解决方案：
+
+第一种：创建完项目后，需要手动创建出web.xml
+
+第一步：选取创建的项目名称右击
+第二步：eclipse的同学找到 java EE Tools 中的 Generalte Deployment。  MyEclipse的同学找到"MyEclipse"中的 下图画圈部分。　
+第三步：再次打开WEB-INF下，就会发现生成了web.xml
+
+第二种：在创建项目的同时，就自动生成web.xml
+
+　　　　　　　　创建web项目时，一直点next，不要直接点finish，直到出现下面界面，选取画圈部分即可自动生成web.xml
+
+
+【3】向Java项目中导入jar包方法详述
+https://blog.csdn.net/androidSmallJi/article/details/78854344
+你在向java类中导入某些包的时候（比如：import javax.servet.*）会报错，提示没有这个包。那是因为我们使用的jdk的JRE System Library库中没有包含servet_api.jar。这个时候我们可以可以在网上下载或从Tomcat的lib子目录中的到需要的servlet-api.jar。那么，如何将相应的jar包导入到java项目中呢？下面我们将会进行讲解
+
+1.方法一：
+
+       a.在java项目中新建一个文件夹lib,并将需要导入的jar包复制到lib文件夹中
+ c.右键点击java项目名，点击“Build Path”---->"Configure Build Path"----->"Java Build Path"----->"Libraries"之后，在弹出的properties窗口中可以发现多了一个servlet-api.jar库
