@@ -59,7 +59,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                             <td class="center">&nbsp;&nbsp;&nbsp;&nbsp;<%=student.getCollege()%></td>
                             <td class="center">&nbsp;&nbsp;&nbsp;&nbsp;<%=student.getIntroduction()%>...</td>
                         <td >
-                              <a class="btn btn-success"href="StudentServlet/viewstudent?id=<%=student.getId()%>">
+                              <a class="btn btn-success"href="viewstudent?id=<%=student.getId()%>">
                                     <i class="glyphicon glyphicon-zoom-in icon-white"></i>
                                     查看
                                 </a>

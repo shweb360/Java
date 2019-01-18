@@ -13,7 +13,8 @@ import com.student.action.StudentAction;
 /**
  * Servlet implementation class StudentServlet
  */
-@WebServlet("/StudentServlet")
+
+@WebServlet(name="StudentServlet",urlPatterns={"/StudentServlet","/addStudent","/viewstudent","/updateStudent","/deleteStudent"})
 public class StudentServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
