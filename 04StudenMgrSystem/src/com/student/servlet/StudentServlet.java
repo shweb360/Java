@@ -14,7 +14,7 @@ import com.student.action.StudentAction;
  * Servlet implementation class StudentServlet
  */
 
-@WebServlet(name="StudentServlet",urlPatterns={"/StudentServlet","/addStudent","/viewstudent","/updateStudent","/deleteStudent"})
+@WebServlet(name="StudentServlet",urlPatterns={"/StudentServlet","/addStudent","/viewStudent","/updateStudent","/deleteStudent"})
 public class StudentServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
