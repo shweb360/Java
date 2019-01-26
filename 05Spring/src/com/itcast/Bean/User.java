@@ -2,6 +2,9 @@ package com.itcast.Bean;
 
 public class User {
 
+	public User() {
+		System.out.println("ø’≤Œππ‘Ï");
+	}
 	public String getName() {
 		return name;
 	}
