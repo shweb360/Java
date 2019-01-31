@@ -16,8 +16,10 @@ public class Demo {
 		
 		//向容器要user对象；
 		User user = (User)ac.getBean("user"); 
+		User user2 = (User)ac.getBean("user"); 
+		
 		//打印user对象；
-		System.out.println(user);
+		System.out.println(user==user2);
 	}
 	@Test
 	public void fun2() {

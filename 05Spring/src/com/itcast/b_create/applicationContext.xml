@@ -3,7 +3,7 @@
 <!-- 将uesr 对象交给spring容器管理 -->
 
 <!--创建对象方式1：空参构造创建  -->
-<bean name="user" class="com.itcast.Bean.User"></bean>
+<bean name="user" class="com.itcast.Bean.User" scope="singleton"></bean>
 
 <!--创建对象方式2：静态工厂
 调用UserFactory的createUser方法创建user2对象，放入容器
