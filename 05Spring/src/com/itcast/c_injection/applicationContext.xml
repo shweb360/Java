@@ -11,11 +11,18 @@
 		<property name="car" ref="car"></property>
 	</bean>
 
-	<!-- 将car 对象交给spring容器管理 -->
-	
+	<!-- 将car 对象交给spring容器管理 -->	
 	<bean name="car" class="com.itcast.Bean.Car">
 		<property name="name" value="BMW"></property>
 		<property name="color" value="Yellow"></property>
 	</bean>
-
+	<!-- ============================================== -->
+	<!-- 属性注入，构造函数 方式 -->
+	
+	<bean name="user3" class="com.itcast.Bean.User">
+	 <constructor-arg name="name" value="2" index="0" type="java.lang.Integer"></constructor-arg>
+	 <constructor-arg name="car" ref="car" index="1"></constructor-arg>
+	
+	</bean>
+	
 </beans>

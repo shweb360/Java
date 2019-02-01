@@ -17,11 +17,12 @@ public class Demo {
 	@SuppressWarnings("resource")
 	//创建容器
 	ApplicationContext appContext=new ClassPathXmlApplicationContext("com/itcast/c_injection/applicationContext.xml");
+	
 	//获取car对象
 	Car car=(Car)appContext.getBean("car");
 	System.out.println(car);
-	
-	User user=(User) appContext.getBean("user");
+	//
+	User user=(User) appContext.getBean("user2");
 	System.out.println(user);
 	}
 }
