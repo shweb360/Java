@@ -11,18 +11,68 @@
 		<property name="car" ref="car"></property>
 	</bean>
 
-	<!-- 将car 对象交给spring容器管理 -->	
+	<!-- 将car 对象交给spring容器管理 -->
 	<bean name="car" class="com.itcast.Bean.Car">
 		<property name="name" value="BMW"></property>
 		<property name="color" value="Yellow"></property>
 	</bean>
 	<!-- ============================================== -->
 	<!-- 属性注入，构造函数 方式 -->
-	
+
 	<bean name="user3" class="com.itcast.Bean.User">
-	 <constructor-arg name="name" value="2" index="0" type="java.lang.Integer"></constructor-arg>
-	 <constructor-arg name="car" ref="car" index="1"></constructor-arg>
-	
+		<constructor-arg name="name" value="2" index="0"
+			type="java.lang.Integer"></constructor-arg>
+		<constructor-arg name="car" ref="car" index="1"></constructor-arg>
 	</bean>
+
+
+	<!-- ==================复杂类型注入============================ -->
 	
+	<bean name="cb" class="com.itcast.c_injection.CollectionBean">
+	
+		<!-- 一、array数组注入，1、 如果数组中只有一个值（对象）,直接value/ref即可 
+		<property name="arr" value="jack"></property>
+		 -->
+		<!-- array数组注入，2、有多个元素， -->
+		<property name="arr">
+			<array>
+				<value>Tom</value>
+				<value>Jerry</value>
+				<ref bean="user"/>
+			</array>
+		</property>
+		
+		<!-- 二、list注入，1、 如果list中只有一个值（对象）,直接value/ref即可 
+		<property name="list" value="Wushuang"></property>
+		-->
+		<!-- list注入，2、有多个元素， -->
+		<property name="list">
+		<list>
+			<value>Juan</value>
+			<value>Yue</value>
+			<value>Shuang</value>
+			<ref bean="user"/>
+		</list>
+		</property>
+		
+		<!-- 三、map注入， -->
+		<property name="map">
+			<map>
+			<entry key="url" value="jdbc:mysql:///orm"></entry>
+			<!-- 键为字符串，值为对象 -->
+			<entry key="car" value-ref="car"></entry>
+			<!-- 键为对象，值为对象 -->
+			<entry key-ref="user" value-ref="user"></entry>
+			</map>
+		</property>
+		
+		<!-- 四、properties注入， -->
+		<property name="prop">		
+			<props>
+				<prop key="driverClass">com.jdbc.mysql.driver</prop>
+				<prop key="name">admin</prop>
+				<prop key="pwd">123456</prop>
+			</props>
+		</property>
+	</bean>
 </beans>
