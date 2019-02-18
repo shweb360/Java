@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/beans" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd ">
+<!-- 将uesr 对象交给spring容器管理 -->
+
+<!--创建对象方式1：空参构造创建  -->
+<bean name="user" class="com.itcast.Bean.User" scope="singleton"></bean>
+
+<!--创建对象方式2：静态工厂
+调用UserFactory的createUser方法创建user2对象，放入容器
+ -->
+<bean name="user2" class="com.itcast.b_create.UserFactory" factory-method="createUser"></bean>
+
+<!--创建对象方式3：实例工厂
+调用UserFactory对象的createUser2方法创建user3对象，放入容器
+ -->
+<bean name="user3" factory-bean="userfactory" factory-method="createUser2"></bean>
+
+<bean name="userfactory" 
+class="com.itcast.b_create.UserFactory" ></bean>
+
+</beans>
