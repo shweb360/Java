@@ -22,11 +22,9 @@ public class Demo {
 		System.out.println(user==user2);
 	}
 	@Test
-	public void fun2() {
-		
+	public void fun2() {		
 		//创建容器对象
 		ApplicationContext ac=new ClassPathXmlApplicationContext("com/itcast/b_create/applicationContext.xml");
-		
 		//向容器要user对象；
 		User user = (User)ac.getBean("user2"); 
 		//打印user对象；
