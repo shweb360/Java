@@ -20,7 +20,7 @@ public class StudentMapperTest {
     // 此方法是在执行findUserByIdTest之前执行
     @Before
     public void setUp() throws Exception {
-        String resource = "conf.xml";
+        String resource = "SqlMapConfig.xml";
         InputStream inputStream = Resources.getResourceAsStream(resource);
         // 创建SqlSessionFcatory
         sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);

@@ -18,7 +18,7 @@ public class UserDaoImplTest {
 
 	@Before
 	public void setUp() throws Exception {
-		String resource = "conf.xml";
+		String resource = "SqlMapConfig.xml";
 		InputStream inputStream = Resources.getResourceAsStream(resource);
 		sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 	}

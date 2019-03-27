@@ -21,7 +21,7 @@ public class Test1 {
 	public void testSelect()
 	{
 		//mybatis的配置文件
-        String resource = "conf.xml";
+        String resource = "SqlMapConfig.xml";
         //使用类加载器加载mybatis的配置文件（它也加载关联的映射文件）
         InputStream is = Test1.class.getClassLoader().getResourceAsStream(resource);
         //构建sqlSession的工厂
@@ -46,7 +46,7 @@ public class Test1 {
 	
 	public void addUser() throws IOException {
 		//mybatis的配置文件
-        String resource = "conf.xml";
+        String resource = "SqlMapConfig.xml";
         //使用类加载器加载mybatis的配置文件（它也加载关联的映射文件）
         InputStream is = Test1.class.getClassLoader().getResourceAsStream(resource);
         //构建sqlSession的工厂
@@ -75,7 +75,7 @@ public class Test1 {
 	@Test
 	public void deleteUser() throws IOException {
 		//mybatis的配置文件
-        String resource = "conf.xml";
+        String resource = "SqlMapConfig.xml";
         //使用类加载器加载mybatis的配置文件（它也加载关联的映射文件）
         InputStream is = Test1.class.getClassLoader().getResourceAsStream(resource);
         //构建sqlSession的工厂
@@ -96,7 +96,7 @@ public class Test1 {
 	@Test
 	public void updateUser() throws IOException {
 		//mybatis的配置文件
-        String resource = "conf.xml";
+        String resource = "SqlMapConfig.xml";
         //使用类加载器加载mybatis的配置文件（它也加载关联的映射文件）
         InputStream is = Test1.class.getClassLoader().getResourceAsStream(resource);
         //构建sqlSession的工厂
