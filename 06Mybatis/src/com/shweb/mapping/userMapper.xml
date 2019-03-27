@@ -11,6 +11,9 @@
 		resultType="com.shweb.mybtis.model.User">
 		select * from student where id=#{id}
 	</select>
+	<select id="getUserByName" parameterType="String" resultType="com.shweb.mybtis.model.User">
+	   select * from student where name=#{name}
+	</select>
 	<!-- 创建用户(Create) -->
 	<insert id="addUser" parameterType="com.shweb.mybtis.model.User">
 	 insert into student (id,age,sex,major,college,introduction,name) 
