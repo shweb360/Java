@@ -14,20 +14,21 @@ import com.shweb.mybtis.model.UserDaoImpl;
 
 public class UserDaoImplTest {
 
-	
 	private SqlSessionFactory sqlSessionFactory;
-	
-	@Before
-    public void setUp() throws Exception {
-        String resource = "conf.xml";
-        InputStream inputStream = Resources.getResourceAsStream(resource);
-        sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
-    }
-	 @Test
-	    public void findUserByIdTest() {
-	        UserDaoImpl userDao = new UserDaoImpl(sqlSessionFactory);
-	        User user = userDao.findeUserById(3);
-	        System.out.println(user);
-	    }
 
+	@Before
+	public void setUp() throws Exception {
+		String resource = "conf.xml";
+		InputStream inputStream = Resources.getResourceAsStream(resource);
+		sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+	}
+
+	@Test
+	public void findUserByIdTest() {
+		UserDaoImpl userDao = new UserDaoImpl(sqlSessionFactory);
+		User user = userDao.findeUserById(3);
+		System.out.println(user);
+	}
+
+	
 }
