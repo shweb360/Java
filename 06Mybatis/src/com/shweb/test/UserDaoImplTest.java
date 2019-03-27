@@ -27,8 +27,15 @@ public class UserDaoImplTest {
 	public void findUserByIdTest() {
 		UserDaoImpl userDao = new UserDaoImpl(sqlSessionFactory);
 		User user = userDao.findeUserById(3);
-		System.out.println(user);
+		//System.out.println(user);
 	}
 
+	@Test
+	public  void findUserByName() {
+		UserDaoImpl userDao=new UserDaoImpl(sqlSessionFactory);
+		List<User> list=userDao.findUserByName("¿Ó");
+		System.out.println(list);
+		
+	}
 	
 }
