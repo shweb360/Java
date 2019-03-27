@@ -1,23 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+	<!-- 加载数据库文件db.properties -->
+	<properties resource="db.properties">
+		<!-- properties中还可以配置一些属性名和属性值,此处的优先加载 -->
+		<!-- <property name="driver" value=""/> -->
+	</properties>
+		
+	<!-- 和spring整合后 environments配置将废除-->
 	<environments default="development">
 		<environment id="development">
+		 <!-- 使用jdbc事务管理,事务控制由mybatis管理-->
 			<transactionManager type="JDBC" />
-			<!-- 配置数据库连接信息 -->
+			 <!-- 数据库连接池,由mybatis管理-->
 			<dataSource type="POOLED">
-				<property name="driver" value="com.mysql.jdbc.Driver" />
-				<property name="url"
-					value="jdbc:mysql://localhost:3306/suoyuan_db" />
-				<property name="username" value="root" />
-				<property name="password" value="root" />
+				<property name="driver" value="${jdbc.driver}" />
+                <property name="url" value="${jdbc.url}" />
+                <property name="username" value="${jdbc.username}" />
+                <property name="password" value="${jdbc.password}" />
 			</dataSource>
 		</environment>
 	</environments>
 	<mappers>
 		<!-- 注册userMapper.xml文件， userMapper.xml位于com.shweb.mapping这个包下， 所以resource写成com/shweb/mapping/userMapper.xml -->
 		<mapper resource="com/shweb/mapping/userMapper.xml" />
-		
+
 		<mapper resource="com/shweb/mapping/StudentMapper.xml" />
 	</mappers>
 </configuration>
