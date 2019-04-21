@@ -43,7 +43,7 @@ public class Test1 {
         System.out.println(user);
 	}
 	
-	
+	@Test
 	public void addUser() throws IOException {
 		//mybatis的配置文件
         String resource = "SqlMapConfig.xml";
@@ -60,12 +60,12 @@ public class Test1 {
 		
 		String satament="com.shweb.mapping.userMapper.addUser";
 		User user=new User();
-		user.setId("5");
+		user.setId("8");
 		user.setAge(20);
-		user.setCollege("北京大学");
-		user.setIntroduction("的范围人");
-		user.setMajor("机械工程");
-		user.setName("小雷");
+		user.setCollege("北京大学1");
+		user.setIntroduction("的范围人2");
+		user.setMajor("机械工程1");
+		user.setName("小雷2");
 		int i=session.insert(satament,user);
 		session.commit();
 		session.close();
@@ -111,7 +111,7 @@ public class Test1 {
 		String satament="com.shweb.mapping.userMapper.updateUser";
 		User user=new User();
 		user.setId("5");		
-		user.setCollege("北京大学2");		
+		user.setCollege("北京大学6662");		
 		user.setName("老宋");
 		int i=session.insert(satament,user);
 		session.commit();

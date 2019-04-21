@@ -16,7 +16,7 @@ public class MyBatisUtil {
      * @return SqlSessionFactory
      */
     public static SqlSessionFactory getSqlSessionFactory() {
-        String resource = "conf.xml";
+        String resource = "SqlMapConfig.xml";
         InputStream is = MyBatisUtil.class.getClassLoader().getResourceAsStream(resource);
         SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
         return factory;
