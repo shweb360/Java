@@ -17,7 +17,12 @@ public class Orders {
     /** 创建订单时间 */
     private Date createTime;
     /** 备注 */
-    private String note;
+    private String note;    
+	// 用户信息
+    private User user;
+    // 订单明细
+    private List<OrderDetail> orderdetails;
+    
     public Integer getId() {
 		return id;
 	}
@@ -60,8 +65,4 @@ public class Orders {
 	public void setOrderdetails(List<OrderDetail> orderdetails) {
 		this.orderdetails = orderdetails;
 	}
-	// 用户信息
-    private User user;
-    // 订单明细
-    private List<OrderDetail> orderdetails;
 }
