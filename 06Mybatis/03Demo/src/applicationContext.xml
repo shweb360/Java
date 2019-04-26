@@ -21,7 +21,8 @@
 	<context:property-placeholder
 		location="classpath:db.properties" />
 	<!-- 配置 数据 源 -->
-	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource">
 		<!-- 数据库 驱动 -->
 		<property name="driverClassName" value="${jdbc.driver}" />
 		<!--连接 数据库 的 url -->
@@ -32,7 +33,7 @@
 		<property name="password" value="${jdbc.password}" />
 		<property name="maxActive" value="10" />
 		<property name="maxIdle" value="5" />
-	
+
 	</bean>
 
 	<!-- 事务 管理器， 依赖于 数据 源 -->
@@ -50,10 +51,24 @@
 		<property name="configLocation"
 			value="classpath:mybatis-config.xml" />
 	</bean>
-		<!-- 实例 化 Dao --> 
-		<bean id="customerDao" class="com.ithema.dao.impl.CustomerDaoImpl"> 
-		<!-- 注入 SqlSessionFactory 对象 实例--> 
-		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
-		</bean>
 
+	<!-- 1、实例 化 Dao -->
+	<bean id="customerDao" class="com.ithema.dao.impl.CustomerDaoImpl">
+		<!-- 注入 SqlSessionFactory 对象 实例 -->
+		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+	</bean>
+	
+	<!-- 2、Mapper代理开发（基于MapperFactoryBean） -->
+ <bean id="customerMapper"
+		class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface"
+			value="com.ithema.mapper.CustomerMapper" />
+		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+	</bean> 
+
+	<!-- 通过MapperScannerConfigurer进行mapper扫描（建议使用） -->
+<!-- 	<bean  class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+	<property name="basePackage" value="com.ithema.mapper" />
+	<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+	</bean> -->
 </beans>

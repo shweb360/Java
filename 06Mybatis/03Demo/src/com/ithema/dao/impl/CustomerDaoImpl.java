@@ -15,6 +15,6 @@ import com.ithema.pro.Customer;
 public class CustomerDaoImpl extends SqlSessionDaoSupport implements CustomerDao {
 
 	public Customer findCustomerById(Integer id) {
-		return this.getSqlSession().selectOne("test.findCustomerById",id);
+		return this.getSqlSession().selectOne("com.ithema.mapper.CustomerMapper.findCustomerById",id);
 	}
 }
