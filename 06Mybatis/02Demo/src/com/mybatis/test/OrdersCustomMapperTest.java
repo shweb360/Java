@@ -66,7 +66,7 @@ public class OrdersCustomMapperTest {
         // 创建代理对象
         OrdersCustomMapper oc = sqlSession.getMapper(OrdersCustomMapper.class);
         // 调用mapper的方法
-        List<OrderDetail> list = oc.findOrdersAndOrderDetailResultMap();
+        List<Orders> list = oc.findOrdersAndOrderDetailResultMap();
         System.out.println(list);
         sqlSession.close();  
     }

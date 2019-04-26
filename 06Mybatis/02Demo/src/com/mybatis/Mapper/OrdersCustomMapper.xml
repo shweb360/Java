@@ -157,5 +157,5 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
                   orderdetail t3,
                   items t4
             WHERE t1.user_id =  t2.id AND  t3.orders_id=t1.id AND t3.items_id = t4.id
-    </select>
+    </select>  
 </mapper>

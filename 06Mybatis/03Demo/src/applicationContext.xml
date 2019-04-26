@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="                                             
+            http://www.springframework.org/schema/beans  
+            http://www.springframework.org/schema/beans/spring-beans.xsd  
+            http://www.springframework.org/schema/context   
+            http://www.springframework.org/schema/context/spring-context.xsd  
+            http://www.springframework.org/schema/mvc  
+            http://www.springframework.org/schema/mvc/spring-mvc.xsd
+            http://www.springframework.org/schema/tx 
+            http://www.springframework.org/schema/tx/spring-tx.xsd
+            http://www.springframework.org/schema/aop
+            http://www.springframework.org/schema/aop/spring-aop.xsd "
+	default-autowire="byName">
+	<!-- 读取 db. properties -->
+	<context:property-placeholder
+		location="classpath:db.properties" />
+	<!-- 配置 数据 源 -->
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<!-- 数据库 驱动 -->
+		<property name="driverClassName" value="${jdbc.driver}" />
+		<!--连接 数据库 的 url -->
+		<property name="url" value="${jdbc.url}" />
+		<!-- 连接 数据库 的 用 户名 -->
+		<property name="username" value="${jdbc.username}" />
+		<!-- 连接 数据库 的 密码 -->
+		<property name="password" value="${jdbc.password}" />
+		<property name="maxActive" value="10" />
+		<property name="maxIdle" value="5" />
+	
+	</bean>
+
+	<!-- 事务 管理器， 依赖于 数据 源 -->
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<!-- 配置 MyBatis 工厂 -->
+	<bean id="sqlSessionFactory"
+		class="org.mybatis.spring.SqlSessionFactoryBean">
+		<!--注入 数据 源 -->
+		<property name="dataSource" ref="dataSource" />
+		<!--指定 核心 配置文件 位置 -->
+		<property name="configLocation"
+			value="classpath:mybatis-config.xml" />
+	</bean>
+		<!-- 实例 化 Dao --> 
+		<bean id="customerDao" class="com.ithema.dao.impl.CustomerDaoImpl"> 
+		<!-- 注入 SqlSessionFactory 对象 实例--> 
+		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+		</bean>
+
+</beans>
