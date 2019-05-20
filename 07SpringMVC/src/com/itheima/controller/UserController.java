@@ -50,4 +50,32 @@ public class UserController {
 		return "success";
 		
 	}
+	
+	/**
+	 * 向用户列表页面跳转
+	 * @return
+	 */
+	@RequestMapping("/selectUsers")
+	public String selectUsers()
+	{
+		return "user";
+	}
+	/**
+	 * 接受批量删除用户的方法
+	 * @param ids
+	 * @return
+	 */
+	@RequestMapping("/deleteUsers")
+	public String deleteUsers(Integer[] ids) {
+		if(ids!=null) {
+			for(Integer id:ids) {
+				System.out.println("删除了id为"+id+"的用户");
+			}
+		}
+		else
+		{
+			System.out.println("ids=null");
+		}
+		return "success";
+	}
 }
