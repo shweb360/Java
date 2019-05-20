@@ -1,5 +1,7 @@
 package com.itheima.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
@@ -8,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.itheima.po.User;
+import com.itheima.vo.UserV0;
 
 
 /**
@@ -76,6 +79,32 @@ public class UserController {
 		{
 			System.out.println("ids=null");
 		}
+		return "success";
+	}
+	
+	/**
+	 * 向用户批量修改页面跳转
+	 */
+	@RequestMapping("/toUserEdit")
+	public String toUserEdit()
+	{
+		return "user_edit";
+	}
+	/**
+	 * 接受批量修改用户的方法
+	 * @param userList
+	 * @return
+	 */
+	@RequestMapping("/editUser")
+	public String editUser(UserV0 userList) {
+		
+		List<User> users=userList.getUsers();
+		for(User user:users) {
+			if(user.getId()!=null) {
+				System.out.println("修改了id为"+user.getId()+"的用户名为："+user.getUsername());
+			}
+		}
+		
 		return "success";
 	}
 }
