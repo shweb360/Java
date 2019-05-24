@@ -5,6 +5,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -106,5 +107,18 @@ public class UserController {
 		}
 		
 		return "success";
+	}
+	@RequestMapping("/toIndex")
+	public String toindex()
+	{
+		return "index";
+	}
+	/**
+	 * 接收页面请求的JSON数据，并返回JSON格式结果
+	 */
+	@RequestMapping("/testJson")
+	public User testJson(@RequestBody User user) {
+		System.out.println(user);
+		return user;
 	}
 }

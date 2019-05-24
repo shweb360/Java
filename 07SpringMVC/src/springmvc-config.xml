@@ -37,6 +37,8 @@ http://www.springframework.org/schema/tx/spring-tx.xsd
 </bean>
 <!-- 显示的装配自定义类型转换器 -->
 <mvc:annotation-driven conversion-service="convsersionService"/>
+<!-- 配置静态资源的访问映射，此配置中的文件，将不被前端控制器拦截 -->
+<mvc:resources location="/WEB-INF/js/" mapping="/WEB-INF/js/**"></mvc:resources>
 <!-- 自定义类型转换器配置 -->
 <bean id="convsersionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
 <property name="converters">
@@ -45,12 +47,5 @@ http://www.springframework.org/schema/tx/spring-tx.xsd
 </set>
 </property>
 </bean>
-<mvc:annotation-driven conversion-service="formattersService"/>
-<bean id="formattersService"  class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
-<property name="formatters">
-<set>
-<bean class="com.iteheima.convert.DateFormatter"></bean>
-</set>
-</property>
-</bean>
+
 </beans>
